@@ -281,7 +281,7 @@ class FactorLexer(RegexLexer):
             (r'(<PRIVATE|PRIVATE>)(\s)', bygroups(Keyword.Namespace, Whitespace)),
 
             # strings
-            (r'"""\s(?:.|\n)*?\s"""', String),
+            (r'"""\s[\s\S]*?\s"""', String),
             (r'"(?:\\\\|\\"|[^"])*"', String),
             (r'(\S+")(\s+)((?:\\\\|\\"|[^"])*")',
                 bygroups(String, Whitespace, String)),
@@ -291,7 +291,7 @@ class FactorLexer(RegexLexer):
             # comments
             (r'!\s+.*$', Comment),
             (r'#!\s+.*$', Comment),
-            (r'/\*\s+(?:.|\n)*?\s\*/', Comment),
+            (r'/\*\s+[\s\S]*?\s\*/', Comment),
 
             # boolean constants
             (r'[tf]\b', Name.Constant),

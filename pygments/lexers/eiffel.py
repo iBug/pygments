@@ -48,7 +48,7 @@ class EiffelLexer(RegexLexer):
                 'require', 'rescue', 'retry', 'select', 'separate', 'then',
                 'undefine', 'until', 'variant', 'when'), prefix=r'(?i)\b', suffix=r'\b'),
              Keyword.Reserved),
-            (r'"\[([^\]%]|%(.|\n)|\][^"])*?\]"', String),
+            (r'"\[([^\]%]|%([\s\S])|\][^"])*?\]"', String),
             (r'"([^"%\n]|%.)*?"', String),
             include('numbers'),
             (r"'([^'%]|%'|%%)'", String.Char),
